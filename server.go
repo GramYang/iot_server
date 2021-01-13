@@ -11,9 +11,9 @@ import (
 	_ "github.com/davyxu/cellnet/proc/tcp"
 )
 
-const peerAddress = "127.0.0.1:17701"
+const peerAddress = ":8086"
 
-func main(){
+func main() {
 	log.InitLog(0)
 	queue := cellnet.NewEventQueue()
 	peerIns := peer.NewGenericPeer("tcp.Acceptor", "server", peerAddress, queue)

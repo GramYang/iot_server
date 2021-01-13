@@ -11,9 +11,9 @@ import (
 	_ "github.com/davyxu/cellnet/proc/tcp"
 )
 
-const peerAddress = "127.0.0.1:17701"
+const peerAddress = "127.0.0.1:8086"
 
-func main(){
+func main() {
 	done := make(chan struct{})
 	queue := cellnet.NewEventQueue()
 	peerIns := peer.NewGenericPeer("tcp.Connector", "client", peerAddress, queue)
@@ -23,7 +23,7 @@ func main(){
 		case *cellnet.SessionConnected:
 			fmt.Println("client connected")
 			ev.Session().Send(&handler.JsonEcho{
-				Msg:   "hello",
+				Msg: "hello",
 			})
 		//收到响应后就关闭
 		case *handler.JsonEcho:
