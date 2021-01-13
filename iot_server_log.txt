@@ -1,0 +1,4 @@
+gylog.go:280: DEBUG server accepted
+gylog.go:280: DEBUG server recv %+v
+ &{hello}
+gylog.go:280: DEBUG session closed:  1
