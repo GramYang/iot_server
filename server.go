@@ -8,16 +8,16 @@ import (
 	"iot_server/log"
 
 	_ "github.com/davyxu/cellnet/peer/tcp"
-	_ "github.com/davyxu/cellnet/proc/tcp"
+	_ "iot_server/proc/tcp"
 )
 
 const peerAddress = ":8086"
 
 func main() {
-	log.InitLog(0)
+	log.InitLog(1)
 	queue := cellnet.NewEventQueue()
 	peerIns := peer.NewGenericPeer("tcp.Acceptor", "server", peerAddress, queue)
-	proc.BindProcessorHandler(peerIns, "tcp.ltv", handler.JsonHandler)
+	proc.BindProcessorHandler(peerIns, "tcp.iotltv", handler.JsonHandler)
 	peerIns.Start()
 	queue.StartLoop()
 	queue.Wait()
