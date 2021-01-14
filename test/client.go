@@ -11,9 +11,9 @@ import (
 	_ "github.com/davyxu/cellnet/proc/tcp"
 )
 
-const peerAddress = "106.54.87.204:8086"
+//const peerAddress = "106.54.87.204:8086"
 
-//const peerAddress="127.0.0.1:8086"
+const peerAddress = "127.0.0.1:8086"
 
 func main() {
 	done := make(chan struct{})

@@ -14,7 +14,7 @@ import (
 const peerAddress = ":8086"
 
 func main() {
-	log.InitLog(1)
+	log.InitLog(0)
 	queue := cellnet.NewEventQueue()
 	peerIns := peer.NewGenericPeer("tcp.Acceptor", "server", peerAddress, queue)
 	proc.BindProcessorHandler(peerIns, "tcp.iotltv", handler.JsonHandler)

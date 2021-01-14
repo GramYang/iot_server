@@ -10,7 +10,7 @@ func init() {
 	proc.RegisterProcessor("tcp.iotltv", func(bundle proc.ProcessorBundle, userCallback cellnet.EventCallback) {
 
 		bundle.SetTransmitter(new(IOTMessageTransmitter))
-		bundle.SetHooker(new(MsgHooker))
+		//bundle.SetHooker(new(MsgHooker))
 		bundle.SetCallback(proc.NewQueuedEventCallback(userCallback))
 
 	})

@@ -17,7 +17,7 @@ var (
 
 const (
 	bodySize  = 2 // 包体大小字段
-	msgIDSize = 1 // 消息ID字段
+	msgIDSize = 2 // 消息ID字段
 )
 
 // 接收Length-Type-Value格式的封包流程
